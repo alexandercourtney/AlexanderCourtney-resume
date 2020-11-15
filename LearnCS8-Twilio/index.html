@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Most Anticipated Game Release of the Year">
+    <meta name="author" content="862131981">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!-- Title of your Website -->
+    <title>Cyberpunk 2077</title>
+    <link href="product.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="site-header sticky-top py-1">
+    <!-- Top Menu Bar -->
+    <div class="container d-flex flex-column flex-md-row justify-content-between">
+        <a class="py-2 d-none d-md-inline-block" id="menu-item-1" href="https://www.shopcanyoncrest.com/" target="_blank">Preorder</a>
+        <a class="py-2 d-none d-md-inline-block" id="menu-item-2" href="https://www.chewy.com/" target="_blank">Reviews</a>
+        <a class="py-2 d-none d-md-inline-block" id="menu-item-3" href="https://www.amazon.com/" target="_blank">NightCity</a>
+        <a class="py-2 d-none d-md-inline-block" id="menu-item-4" href="https://www.ironflask.com/" target="_blank">Gameplay</a>
+        <a class="py-2 d-none d-md-inline-block" id="menu-item-5" href="https://www.jbl.com/" target="_blank">About</a>
+        <a class="py-2 d-none d-md-inline-block" id="menu-item-6" href="https://www.google.com/" target="_blank">Connect</a>
+        <a class="py-2 d-none d-md-inline-block" id="menu-item-7" href="https://www.cyberpunk.net/us/en/" target="_blank">Design</a>
+    </div>
+</nav>
+<!-- Main Header Section h1-->
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-0 text-center bg-light">
+    <div class="col-md-8 p-lg-5 mx-auto my-5">
+        <h1 class="display-4 font-weight-normal">Preorder Cyberpunk 2077</h1>
+        <p class="lead font-weight-normal">The Most Anticipated Game of the Year. We apologize for our most recent delay, however it is only to ensure we release a finalized game. We appreciate your patience and look forward to you playing our game.</p>
+        <a class="btn btn-outline-secondary" href="https://twitter.com/CyberpunkGame?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank">Coming December 10, 2020</a>
+    </div>
+</div>
+<!-- Left Tile -->
+<div class="d-md-flex flex-md-equal w-100">
+    <div class="bg-dark pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+        <div class="my-3 py-3">
+            <h2 class="display-5">Sign up</h2>
+            <p class="lead">Sign up now to get instant access to our exclusive digital content</p>
+        </div>
+        <!-- Web form when submitted will send a text message -->
+        <form class="p-2" onsubmit="sendTextMessage(); return false;">
+            <!-- Full Name Form Field -->
+            <div class="form-group">
+                <label for="example-first-name">Full Name</label>
+                <input type="text" value="Full Name" class="form-control" id="example-first-name" aria-describedby="emailHelp">
+            </div>
+            <!-- Phone Number Form Field -->
+            <div class="form-group">
+                <label for="example-tel-input">Phone number</label>
+                <input type="tel" class="form-control" value="1408555555" id="example-tel-input">
+            </div>
+            <!-- JavaScript that handles onSubmit logic -->
+            <!-- Configure the XHR request below with your own credentials -->
+            <script>
+            function sendTextMessage() {
+              console.log("Hello world!");
+                var xhr = new XMLHttpRequest();
+                var accountSID = "ACc8779ea2d5a7b4d17cdbcb61bf788a7e";
+                var authToken = "9799397946452ab5a3eac237e113025e";
+                var base64encoded = accountSID + ":" + authToken;
+                var params = "To=" + document.getElementById('example-tel-input').value + "&From=" + "16072334919" + "&Body=" + "Hello " + document.getElementById('example-first-name').value + " nice job on sending your first SMS with APIs."
+                xhr.open("POST", "https://api.twilio.com/2010-04-01/Accounts/" + accountSID + "/Messages.json", true);
+                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                xhr.setRequestHeader('Authorization', 'Basic ' + /global btoa/ (base64encoded));
+                xhr.send(params);
+            }
+            </script>
+            <!-- Submit button that will execute the sendTextMessage function -->
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <!-- Right Tile -->
+    <div class="bg-light pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+        <div class="my-3 p-3">
+            <h2 class="display-5">Preorder for Some Bonus Physical & Digital Goodies</h2>
+            <p class="lead">Recieve a postcard from NightCity, stickers, a map of NightCity, the Cyberpunk2077 soundtrack & more!</p>
+            <img class="mx-auto" src="cyberpunk2077.png" height="250px">
+        </div>
+        <div class="mx-auto" style="width: 80%; height: 100px; border-radius: 21px 21px 0 0;"></div>
+    </div>
+</div>
+  </body>
+</html>
